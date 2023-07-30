@@ -4,7 +4,8 @@ import javax.swing.*;
 
 public class Main {
     public static void showResult(double amount, String msg1, String value, String msg2) {
-        JOptionPane.showMessageDialog(null, "$ " + amount + " " + msg1 + " equivalen a: $ " + value + " " + msg2);
+        JOptionPane.showMessageDialog(null,
+                "$ " + amount + " " + msg1 + " equivalen a: $ " + value + " " + msg2);
     }
     public static int closeProgram() {
         return JOptionPane.showConfirmDialog(null,

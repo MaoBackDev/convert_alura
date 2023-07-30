@@ -25,7 +25,7 @@ public class Conversor {
         return df.format(Math.round(this.amount / currency));
     }
     public String currencyToLocal(double currency) {
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat("#.###");
         df.setRoundingMode(RoundingMode.HALF_UP);
         return df.format(Math.round(this.amount * currency));
     }
