@@ -15,7 +15,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String[] options = {"PESO_DOLLAR", "PESO_EURO", "PESO_WOM", "PESO_YEN", "DOLLAR_PESO", "EURO_PESO", "WOM_PESO", "YEN_PESO",};
+        String[] options = {"PESO_DOLLAR", "PESO_EURO", "PESO_WOM", "PESO_YEN", "PESO_LIBRA", "DOLLAR_PESO", "EURO_PESO", "WOM_PESO", "YEN_PESO", "LIBRA_PESO"};
         int flag = 0;
         while(flag == 0) {
             String opt = (String) JOptionPane.showInputDialog(null,
@@ -43,6 +43,11 @@ public class Main {
                     showResult(cn.getAmount(), "Pesos Colombianos", value, "Euros");
                     flag = closeProgram();
                 }
+                case "PESO_LIBRA" -> {
+                    value = cn.localToCurrency(Currency.COP_LIB.getOption());
+                    showResult(cn.getAmount(), "Pesos Colombianos", value, "Libras Esterlinas");
+                    flag = closeProgram();
+                }
                 case "PESO_WOM" -> {
                     value = cn.localToCurrency(Currency.COP_WOM.getOption());
                     showResult(cn.getAmount(), "Pesos Colombianos", value, "Woms");
@@ -50,7 +55,7 @@ public class Main {
                 }
                 case "PESO_YEN" -> {
                     value = cn.localToCurrency(Currency.COP_YEN.getOption());
-                    showResult(cn.getAmount(), "Pesos Colombianos", value, "Yenes");
+                    showResult(cn.getAmount(), "Pesos Colombianos", value, "Yuanes");
                     flag = closeProgram();
                 }
                 case "DOLLAR_PESO" -> {
@@ -63,6 +68,11 @@ public class Main {
                     showResult(cn.getAmount(), "Euros", value, "Pesos Colombianos");
                     flag = closeProgram();
                 }
+                case "LIBRA_PESO" -> {
+                    value = cn.currencyToLocal(Currency.COP_LIB.getOption());
+                    showResult(cn.getAmount(), "Libras Esterlinas", value, "Pesos Colombianos");
+                    flag = closeProgram();
+                }
                 case "WOM_PESO" -> {
                     value = cn.currencyToLocal(Currency.COP_WOM.getOption());
                     showResult(cn.getAmount(), "Woms", value, "Pesos Colombianos");
@@ -70,7 +80,7 @@ public class Main {
                 }
                 case "YEN_PESO" -> {
                     value = cn.currencyToLocal(Currency.COP_YEN.getOption());
-                    showResult(cn.getAmount(), "Yenes", value, "Pesos Colombianos");
+                    showResult(cn.getAmount(), "Yuanes", value, "Pesos Colombianos");
                     flag = closeProgram();
                 }
                 default -> {
