@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Main {
     public static void showResult(double amount, String msg1, String value, String msg2) {
-        JOptionPane.showMessageDialog(null, "$" + amount + " " + msg1 + " equivalen a: $" + value + " " + msg2);
+        JOptionPane.showMessageDialog(null, "$ " + amount + " " + msg1 + " equivalen a: $ " + value + " " + msg2);
     }
     public static int closeProgram() {
         return JOptionPane.showConfirmDialog(null,
@@ -13,7 +13,6 @@ public class Main {
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.INFORMATION_MESSAGE);
     }
-
     public static void main(String[] args) {
         String[] options = {"PESO_DOLLAR", "PESO_EURO", "PESO_WOM", "PESO_YEN", "PESO_LIBRA", "DOLLAR_PESO", "EURO_PESO", "WOM_PESO", "YEN_PESO", "LIBRA_PESO"};
         int flag = 0;
@@ -28,9 +27,7 @@ public class Main {
 
             if(input == null) break;
             double amount = Double.parseDouble(input);
-
-            System.out.println(amount);
-            Conversor cn = new Conversor(opt, amount);
+            Conversor cn = new Conversor(amount);
             String value;
             switch (opt) {
                 case "PESO_DOLLAR" -> {
